@@ -1,0 +1,104 @@
+---
+---
+
+<section class="hero">
+	<div class="container">
+		<div class="hero-content">
+			<h1 class="fade-in">
+				Senior UI/UX &<br />Product Designer
+			</h1>
+			<p class="fade-in fade-in-delay-1">
+				Crafting thoughtful digital experiences through research, design systems, and human-centered design.
+			</p>
+			<div class="cta fade-in fade-in-delay-2">
+				<a href="#about" class="btn-primary">Learn More</a>
+				<a href="#contact" class="btn-secondary">Get in Touch</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		padding-top: 80px;
+	}
+
+	.hero-content {
+		padding: var(--spacing-xl) 0;
+		max-width: var(--content-width);
+	}
+
+	.hero h1 {
+		margin-bottom: var(--spacing-md);
+		background: linear-gradient(135deg, var(--color-text) 0%, var(--color-accent) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.hero p {
+		font-size: 1.25rem;
+		margin-bottom: var(--spacing-lg);
+		max-width: 600px;
+	}
+
+	.cta {
+		display: flex;
+		gap: var(--spacing-sm);
+		flex-wrap: wrap;
+	}
+
+	.btn-primary,
+	.btn-secondary {
+		display: inline-block;
+		padding: 0.875rem 2rem;
+		border-radius: 0.5rem;
+		font-weight: 500;
+		transition: all 0.2s ease;
+		border: 2px solid transparent;
+	}
+
+	.btn-primary {
+		background: var(--color-accent);
+		color: var(--color-bg);
+	}
+
+	.btn-primary:hover {
+		background: var(--color-accent-hover);
+		transform: translateY(-2px);
+	}
+
+	.btn-secondary {
+		border-color: var(--color-border);
+		color: var(--color-text);
+	}
+
+	.btn-secondary:hover {
+		border-color: var(--color-accent);
+		color: var(--color-accent);
+		transform: translateY(-2px);
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			min-height: 80vh;
+		}
+
+		.hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.cta {
+			flex-direction: column;
+		}
+
+		.btn-primary,
+		.btn-secondary {
+			width: 100%;
+			text-align: center;
+		}
+	}
+</style>

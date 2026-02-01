@@ -1,0 +1,76 @@
+---
+---
+
+<header>
+	<div class="container">
+		<nav>
+			<a href="/" class="logo">
+				<img src="/logo.svg" alt="UIUXTINA Design" />
+			</a>
+			<ul>
+				<li><a href="/">ABOUT</a></li>
+				<li><a href="/work">MY WORK</a></li>
+				<li><a href="/contact">CONTACT</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<style>
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 100;
+		/* Copied from uiuxtina.webflow.io .navbar-component on 2026-01-24 */
+		background-color: transparent;
+		backdrop-filter: blur(40px);
+		-webkit-backdrop-filter: blur(40px);
+	}
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: var(--spacing-sm) 0;
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+	}
+
+	.logo img {
+		height: 80px;
+		width: auto;
+	}
+
+	ul {
+		display: flex;
+		gap: var(--spacing-md);
+		list-style: none;
+	}
+
+	nav a {
+		color: var(--color-text-muted);
+		transition: color 0.2s ease;
+	}
+
+	ul a {
+		font-family: 'Marcellus', serif;
+		font-size: 0.875rem;
+		letter-spacing: 0.1em;
+	}
+
+	nav a:hover,
+	.logo:hover {
+		color: var(--color-accent);
+	}
+
+	@media (max-width: 768px) {
+		ul {
+			gap: var(--spacing-sm);
+		}
+	}
+</style>

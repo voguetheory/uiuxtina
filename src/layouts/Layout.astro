@@ -1,0 +1,230 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Senior UI/UX & Product Designer" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+  /* Copied from uiuxtina.webflow.io on 2026-01-24 */
+  /* Base background: --black: #131313 from Webflow CSS */
+  /* Sections use .background-black { background-color: var(--black); color: var(--white); } */
+  --color-bg: #0a0a0a;
+  --color-surface: #0d0d0d;
+
+  /* Text */
+  --color-text: #ffffff;
+  --color-text-muted: #999999;
+
+  /* Accent: gold from logo diamond */
+  --color-accent: #CDA349;
+  --color-accent-hover: #E0B968;
+
+  /* Secondary accent: jewel-toned burgundy for structure */
+  --color-accent-secondary: #8B2F47;
+
+  /* Borders */
+  --color-border: #333333;
+
+		--font-heading: 'Marcellus', serif;
+		--font-sans: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+		--font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+
+		--spacing-xs: 0.5rem;
+		--spacing-sm: 1rem;
+		--spacing-md: 2rem;
+		--spacing-lg: 4rem;
+		--spacing-xl: 6rem;
+
+		--max-width: 1400px;
+		--content-width: 90%;
+		--content-max-width: 960px;
+		--hero-max-width: 1100px;
+	}
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		font-family: var(--font-sans);
+		background: var(--color-bg);
+		color: var(--color-text);
+		scroll-behavior: smooth;
+		overflow-x: hidden;
+	}
+
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	html::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Hide scrollbar for IE, Edge and Firefox */
+	html {
+		-ms-overflow-style: none;  /* IE and Edge */
+		scrollbar-width: none;  /* Firefox */
+	}
+
+	body {
+		line-height: 1.6;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: var(--font-heading);
+		line-height: 1.2;
+		font-weight: 400;
+		letter-spacing: -0.01em;
+	}
+
+	h1 {
+		font-size: clamp(2.5rem, 6vw, 4rem);
+	}
+
+	h2 {
+		font-size: clamp(2rem, 4vw, 3rem);
+	}
+
+	h3 {
+		font-size: clamp(1.5rem, 3vw, 2rem);
+	}
+
+	p {
+		font-size: 1.125rem;
+		line-height: 1.7;
+		color: var(--color-text-muted);
+	}
+
+	a {
+		color: var(--color-accent);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	a:hover {
+		color: var(--color-accent-hover);
+	}
+
+	.container {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		padding: 0 var(--spacing-lg);
+	}
+
+	.content {
+		width: var(--content-width);
+		max-width: var(--content-max-width);
+		margin: 0 auto;
+	}
+
+	/* Responsive breakpoints */
+	@media (max-width: 480px) {
+		.container {
+			padding: 0 var(--spacing-md);
+		}
+		.content {
+			max-width: 100%;
+		}
+	}
+
+	@media (min-width: 481px) and (max-width: 768px) {
+		.container {
+			padding: 0 var(--spacing-md);
+		}
+		.content {
+			max-width: 640px;
+		}
+	}
+
+	@media (min-width: 769px) and (max-width: 1024px) {
+		.content {
+			max-width: 760px;
+		}
+	}
+
+	@media (min-width: 1025px) and (max-width: 1440px) {
+		.content {
+			max-width: 900px;
+		}
+	}
+
+	@media (min-width: 1441px) {
+		.content {
+			max-width: 1020px;
+		}
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.fade-in {
+		animation: fadeInUp 0.6s ease-out forwards;
+		opacity: 0;
+	}
+
+	.fade-in-delay-1 {
+		animation-delay: 0.1s;
+	}
+
+	.fade-in-delay-2 {
+		animation-delay: 0.2s;
+	}
+
+	.fade-in-delay-3 {
+		animation-delay: 0.3s;
+	}
+
+	.fade-in-delay-4 {
+		animation-delay: 0.4s;
+	}
+
+	/* Respect user's motion preferences */
+	@media (prefers-reduced-motion: reduce) {
+		.fade-in {
+			animation: none;
+			opacity: 1;
+		}
+
+		* {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
+
+	.fade-in-delay-5 {
+		animation-delay: 0.5s;
+	}
+</style>

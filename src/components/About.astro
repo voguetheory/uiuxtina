@@ -1,0 +1,158 @@
+---
+---
+
+<section id="about" class="about">
+	<div class="container">
+		<div class="content">
+			<h2 class="fade-in">About</h2>
+			<div class="about-content">
+				<div class="bio fade-in fade-in-delay-1">
+					<p>
+						I'm a senior UI/UX and product designer with a passion for creating meaningful digital experiences.
+						My work focuses on understanding user needs, solving complex problems, and delivering elegant solutions.
+					</p>
+					<p>
+						With expertise in design systems, user research, and product strategy, I bridge the gap between
+						user needs and business goals. I believe great design is invisible—it just works.
+					</p>
+				</div>
+
+				<div class="testimonials fade-in fade-in-delay-2">
+					<article class="testimonial">
+						<p class="testimonial-quote">"Christina is one of the sharpest minds I've worked with. Her ability to navigate complex challenges, think systemically, and collaborate with empathy made her an invaluable partner as a designer. She consistently brings clarity and intelligence to difficult problems."</p>
+						<p class="testimonial-author">— Christopher Nemeth, Lead Product Designer, OOUX specialist</p>
+					</article>
+
+					<article class="testimonial">
+						<p class="testimonial-quote">"Christina has a rare ability to turn complex, fast-moving ideas into clear, thoughtful, and genuinely effective designs. She brings calm, clarity, and empathy to collaboration, and consistently makes teams better through how she listens and works with others."</p>
+						<p class="testimonial-author">— Abdul Wahab, Technical Project Manager</p>
+					</article>
+
+					<article class="testimonial">
+						<p class="testimonial-quote">"Christina balances clarity, usability, and technical reality with ease. She collaborates closely with engineering, adapts designs to real constraints, and translates complex requirements into intuitive, implementation-ready solutions."</p>
+						<p class="testimonial-author">— Eugene Yakhnenko, Senior Frontend Software Engineer</p>
+					</article>
+				</div>
+
+				<div class="skills fade-in fade-in-delay-3">
+					<h3>Skills & Expertise</h3>
+					<div class="skills-grid">
+						<div class="skill-category">
+							<h4>Design</h4>
+							<ul>
+								<li>UI/UX Design</li>
+								<li>Design Systems</li>
+								<li>Prototyping</li>
+								<li>Visual Design</li>
+							</ul>
+						</div>
+						<div class="skill-category">
+							<h4>Research</h4>
+							<ul>
+								<li>User Research</li>
+								<li>Usability Testing</li>
+								<li>User Interviews</li>
+								<li>Analytics</li>
+							</ul>
+						</div>
+						<div class="skill-category">
+							<h4>Tools</h4>
+							<ul>
+								<li>Figma</li>
+								<li>Adobe Creative Suite</li>
+								<li>Sketch</li>
+								<li>Principle</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about {
+		padding: var(--spacing-xl) 0;
+		background: var(--color-surface);
+		border-top: 1px solid var(--color-border);
+	}
+
+	.about h2 {
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.about-content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-lg);
+	}
+
+	.bio p {
+		margin-bottom: var(--spacing-md);
+	}
+
+	.bio p:last-child {
+		margin-bottom: 0;
+	}
+
+	.testimonials {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-md);
+	}
+
+	.testimonial {
+		max-width: 640px;
+	}
+
+	.testimonial-quote {
+		font-style: italic;
+		font-size: 1rem;
+		line-height: 1.6;
+		color: var(--color-text-muted);
+		margin-bottom: var(--spacing-xs);
+	}
+
+	.testimonial-author {
+		font-size: 0.875rem;
+		font-weight: 500;
+		color: var(--color-accent);
+		line-height: 1.4;
+	}
+
+	.skills h3 {
+		margin-bottom: var(--spacing-md);
+		color: var(--color-text);
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: var(--spacing-md);
+	}
+
+	.skill-category h4 {
+		color: var(--color-accent);
+		font-size: 1rem;
+		margin-bottom: var(--spacing-xs);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		font-weight: 600;
+	}
+
+	.skill-category ul {
+		list-style: none;
+	}
+
+	.skill-category li {
+		padding: 0.25rem 0;
+		color: var(--color-text-muted);
+	}
+
+	@media (max-width: 768px) {
+		.skills-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

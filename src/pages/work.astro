@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="My Work - UIUXTINA Design">
+	<Header />
+	<main>
+		<section class="work-page">
+			<div class="container">
+				<div class="content">
+					<h1 class="fade-in">My Work</h1>
+					<p class="intro fade-in fade-in-delay-1">
+						Project previews and Figma links are being prepared for this page. To view my work now, please <a href="/contact">contact me</a>.
+					</p>
+					<div class="resume-cta fade-in fade-in-delay-2">
+						<a href="/cLynn-resume-2026.pdf" download="Christina-Lynn-Resume-2026.pdf" class="btn-resume">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+								<polyline points="7 10 12 15 17 10"></polyline>
+								<line x1="12" y1="15" x2="12" y2="3"></line>
+							</svg>
+							My Resume
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.work-page {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 150px 5vw 100px;
+		background: #000000;
+	}
+
+	.work-page h1 {
+		font-size: clamp(2.5rem, 5vw, 4rem);
+		margin-bottom: var(--spacing-lg);
+		text-align: center;
+		letter-spacing: 0.05em;
+	}
+
+	.intro {
+		font-size: 1.125rem;
+		line-height: 1.8;
+		text-align: center;
+		color: var(--color-text-muted);
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.intro a {
+		color: var(--color-accent);
+		text-decoration: none;
+		transition: opacity 0.2s ease;
+	}
+
+	.intro a:hover {
+		opacity: 0.8;
+	}
+
+	.content {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	/* Fade in animations */
+	.fade-in {
+		opacity: 0;
+		animation: fadeIn 0.8s ease-out forwards;
+	}
+
+	.fade-in-delay-1 {
+		animation-delay: 0.2s;
+	}
+
+	.fade-in-delay-2 {
+		animation-delay: 0.4s;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.resume-cta {
+		text-align: center;
+		margin-top: var(--spacing-lg);
+	}
+
+	.btn-resume {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.625rem 1.75rem;
+		background: transparent;
+		color: var(--color-accent);
+		border: 1px solid var(--color-accent);
+		font-size: 0.75rem;
+		font-weight: 500;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		transition: all 0.3s ease;
+		text-decoration: none;
+	}
+
+	.btn-resume:hover {
+		background: var(--color-accent);
+		color: var(--color-bg);
+		transform: translateY(-2px);
+	}
+
+	.btn-resume svg {
+		width: 16px;
+		height: 16px;
+	}
+</style>
