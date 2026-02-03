@@ -151,8 +151,8 @@ import Footer from '../components/Footer.astro';
 						<img src="/xtina-and-az.png" alt="Christina with cat" />
 					</div>
 					<div class="contact-text">
-						<img src="/uiuxtina-dark-small.png" alt="UIUXTINA Design" class="contact-logo-dark" />
-						<img src="/uiuxtina-light-small.png" alt="UIUXTINA Design" class="contact-logo-light" />
+						<img src="/xtina-logo-dark.svg" alt="UIUXTINA Design" class="contact-logo-dark" />
+						<img src="/xtina-logo-light.svg" alt="UIUXTINA Design" class="contact-logo-light" />
 					</div>
 				</div>
 			</div>
@@ -694,10 +694,14 @@ import Footer from '../components/Footer.astro';
 		display: block;
 	}
 
+	.contact-text {
+		display: flex;
+		align-items: center;
+	}
+
 	.contact-text img {
-		max-width: 500px;
-		width: 100%;
-		height: auto;
+		width: auto;
+		height: 260px;
 	}
 
 	/* Show/hide contact logos based on theme */
@@ -732,7 +736,7 @@ import Footer from '../components/Footer.astro';
 		}
 
 		.contact-text img {
-			max-width: 400px;
+			height: 190px;
 		}
 	}
 
@@ -827,10 +831,11 @@ import Footer from '../components/Footer.astro';
 
 		.contact-text {
 			text-align: center;
+			justify-content: center;
 		}
 
 		.contact-text img {
-			max-width: 300px;
+			height: 180px;
 			margin: 0 auto;
 		}
 

@@ -17,7 +17,7 @@ import Footer from '../components/Footer.astro';
 
 					<form
 						class="contact-form fade-in fade-in-delay-2"
-						action="https://formspree.io/f/YOUR_FORM_ID"
+						action="https://formspree.io/f/mvzqjedv"
 						method="POST"
 					>
 						<div class="form-group">
@@ -106,17 +106,22 @@ import Footer from '../components/Footer.astro';
 	}
 
 	.contact-form {
-		background: rgba(255, 255, 255, 0.02);
-		border: 1px solid rgba(255, 255, 255, 0.05);
 		padding: var(--spacing-xl);
 		margin-bottom: var(--spacing-xl);
 		max-width: 1680px;
 		margin-left: auto;
 		margin-right: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.form-group {
 		margin-bottom: var(--spacing-lg);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
 	}
 
 	label {
@@ -127,6 +132,7 @@ import Footer from '../components/Footer.astro';
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		font-weight: 500;
+		width: 100%;
 	}
 
 	input,
@@ -227,6 +233,31 @@ import Footer from '../components/Footer.astro';
 		to {
 			opacity: 1;
 			transform: translateY(0);
+		}
+	}
+
+	/* Light theme - visible borders */
+	:global([data-theme="light"]) input,
+	:global([data-theme="light"]) textarea {
+		background: rgba(0, 0, 0, 0.02);
+		border: 1px solid rgba(0, 0, 0, 0.15);
+	}
+
+	:global([data-theme="light"]) input:focus,
+	:global([data-theme="light"]) textarea:focus {
+		background: rgba(0, 0, 0, 0.03);
+	}
+
+	/* Desktop - reduce form field width by half */
+	@media (min-width: 1025px) {
+		label,
+		input,
+		textarea {
+			width: 50%;
+		}
+
+		.submit-btn {
+			width: 50%;
 		}
 	}
 
