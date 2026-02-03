@@ -118,8 +118,8 @@ import Footer from '../components/Footer.astro';
 								</article>
 
 								<article class="testimonial">
-									<p class="testimonial-quote">"I've had the pleasure of working with Christina across multiple use cases over the years. She's easy to collaborate with and consistently asks the right questions when it comes to product design. Whether an idea is 10% or 75% baked, Christina has a strong ability to refine it while staying true to the overall vision. I'm continually impressed by her work and would highly recommend her to anyone in need of UI/UX design expertise."</p>
-									<p class="testimonial-author">— Brian Wright, Principal of Autonomous Solutions</p>
+									<p class="testimonial-quote">"I've worked with Christina across multiple projects over the years, and she consistently brings clarity to ideas at any stage—whether loosely formed or nearly complete. She asks the right questions, refines concepts without losing the original vision, and is an easy, thoughtful design partner throughout the process."</p>
+									<p class="testimonial-author">— Brian Wright, Principal and Co-Founder for autonomous solutions</p>
 								</article>
 							</div>
 						</div>
@@ -732,6 +732,19 @@ import Footer from '../components/Footer.astro';
 		.work-preview {
 			grid-template-columns: repeat(2, 1fr);
 		}
+
+		.contact-content {
+			padding-left: 4rem;
+			max-width: 1200px;
+		}
+
+		.contact-image {
+			width: 300px;
+		}
+
+		.contact-text h2 {
+			font-size: clamp(1.75rem, 4vw, 2.5rem);
+		}
 	}
 
 	@media (max-width: 768px) {
@@ -815,15 +828,31 @@ import Footer from '../components/Footer.astro';
 		.contact-content {
 			grid-template-columns: 1fr;
 			gap: var(--spacing-md);
+			padding-left: 0;
 		}
 
 		.contact-image {
 			width: 100%;
-			height: 300px;
+			max-width: 300px;
+			margin: 0 auto;
 		}
 
 		.contact-text h2 {
 			text-align: center;
+			font-size: clamp(1.5rem, 6vw, 2rem);
+		}
+
+		.bio-context {
+			padding: var(--spacing-lg) var(--spacing-md);
+		}
+
+		.approach {
+			padding-left: var(--spacing-md);
+			padding-right: var(--spacing-md);
+		}
+
+		.testimonials-section {
+			padding: var(--spacing-lg) var(--spacing-md);
 		}
 	}
 </style>

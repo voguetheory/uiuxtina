@@ -231,13 +231,31 @@ import Footer from '../components/Footer.astro';
 	}
 
 	@media (max-width: 768px) {
+		.contact-page {
+			padding: 150px 5vw 80px;
+		}
+
+		.contact-page h1 {
+			font-size: clamp(2rem, 8vw, 3rem);
+		}
+
+		.intro {
+			font-size: 1rem;
+			padding: 0 1rem;
+		}
+
 		.contact-form {
-			padding: var(--spacing-lg);
+			padding: var(--spacing-md);
 		}
 
 		.submit-btn {
 			padding: 0.875rem 1.5rem;
-			font-size: 0.75rem;
+			font-size: 0.7rem;
+		}
+
+		input,
+		textarea {
+			font-size: 0.9rem;
 		}
 	}
 </style>
