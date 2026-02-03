@@ -13,15 +13,37 @@ const { title, description = "Senior UI/UX & Product Designer" } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/cat-head-favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 		<title>{title}</title>
+		<script is:inline>
+			// Set theme before page renders to prevent flash
+			(function() {
+				const savedTheme = localStorage.getItem('theme');
+				if (savedTheme) {
+					document.documentElement.setAttribute('data-theme', savedTheme);
+				}
+			})();
+		</script>
 	</head>
 	<body>
 		<slot />
+		<script>
+			// Listen for theme changes
+			window.addEventListener('theme-change', ((e: CustomEvent) => {
+				const theme = e.detail.theme;
+				if (theme === 'light') {
+					document.documentElement.setAttribute('data-theme', 'light');
+					localStorage.setItem('theme', 'light');
+				} else {
+					document.documentElement.removeAttribute('data-theme');
+					localStorage.removeItem('theme');
+				}
+			}) as EventListener);
+		</script>
 	</body>
 </html>
 
@@ -61,6 +83,26 @@ const { title, description = "Senior UI/UX & Product Designer" } = Astro.props;
 		--content-width: 90%;
 		--content-max-width: 960px;
 		--hero-max-width: 1100px;
+	}
+
+	[data-theme="light"] {
+  /* Light theme - inverted colors */
+  --color-bg: #fafafa;
+  --color-surface: #f5f5f5;
+
+  /* Text - inverted from dark theme */
+  --color-text: #0a0a0a;
+  --color-text-muted: #666666;
+
+  /* Accent: burgundy for light theme */
+  --color-accent: #710627;
+  --color-accent-hover: #8b2f47;
+
+  /* Secondary accent */
+  --color-accent-secondary: #8B2F47;
+
+  /* Borders - inverted from dark theme */
+  --color-border: #e0e0e0;
 	}
 
 	* {

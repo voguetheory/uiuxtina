@@ -4,18 +4,22 @@ const currentYear = new Date().getFullYear();
 
 <footer>
 	<div class="container">
-		<div class="footer-grid">
-			<a href="/" class="footer-logo">
-				<img src="/logo.svg" alt="UIUXTINA Design" />
-			</a>
-			<div class="footer-links">
-				<a href="https://www.linkedin.com/in/christinaslynn/" target="_blank">LinkedIn</a>
-			</div>
-		</div>
 		<div class="footer-divider"></div>
 		<div class="footer-bottom">
-			<p>© {currentYear} UIUXTINA</p>
-			<p>Designed by Christina Lynn</p>
+			<div class="footer-copyright">
+				<p>© {currentYear} UIUXTINA</p>
+				<p>Designed by Christina Lynn</p>
+			</div>
+			<div class="footer-links">
+				<a href="https://www.linkedin.com/in/christinaslynn/" target="_blank" rel="noopener noreferrer">
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+						<rect x="2" y="9" width="4" height="12"></rect>
+						<circle cx="4" cy="4" r="2"></circle>
+					</svg>
+					LinkedIn
+				</a>
+			</div>
 		</div>
 	</div>
 </footer>
@@ -27,19 +31,35 @@ const currentYear = new Date().getFullYear();
 		position: relative;
 	}
 
-	.footer-grid {
-		display: grid;
-		grid-template-columns: 1fr auto;
-		gap: 4rem;
+	.footer-divider {
+		height: 1px;
+		background: var(--color-border);
 		margin-bottom: 2rem;
 	}
 
-	.footer-logo img {
-		height: 60px;
-		width: auto;
+	.footer-bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 2rem;
+	}
+
+	.footer-copyright {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.footer-copyright p {
+		font-size: 0.75rem;
+		color: var(--color-text-muted);
+		margin: 0;
 	}
 
 	.footer-links a {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 		font-size: 0.875rem;
 		color: var(--color-text);
 		text-decoration: none;
@@ -50,22 +70,8 @@ const currentYear = new Date().getFullYear();
 		color: var(--color-accent);
 	}
 
-	.footer-divider {
-		height: 1px;
-		background: var(--color-border);
-		margin: 2rem 0;
-	}
-
-	.footer-bottom {
-		display: flex;
-		flex-direction: column;
-		gap: 0.25rem;
-	}
-
-	.footer-bottom p {
-		font-size: 0.75rem;
-		color: var(--color-text-muted);
-		margin: 0;
+	.footer-links svg {
+		flex-shrink: 0;
 	}
 
 	@media (max-width: 768px) {
@@ -73,25 +79,20 @@ const currentYear = new Date().getFullYear();
 			padding: 3rem 0 1.5rem;
 		}
 
-		.footer-grid {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
+		.footer-divider {
 			margin-bottom: 1.5rem;
 		}
 
-		.footer-logo img {
-			height: 50px;
+		.footer-bottom {
+			flex-direction: column;
+			gap: 1.5rem;
 		}
 
 		.footer-links a {
 			font-size: 0.8rem;
 		}
 
-		.footer-divider {
-			margin: 1.5rem 0;
-		}
-
-		.footer-bottom p {
+		.footer-copyright p {
 			font-size: 0.7rem;
 		}
 	}
